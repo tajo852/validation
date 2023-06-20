@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #86a3a7;
+      }
+      .container {
+        height: 500px;
+        width: 350px;
+        margin: 0 auto;
+        background-color: #95d6bd;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 10px 10px 10px 10px #076441;
+      }
+    </style>
+
+    <script>
+      function valid() {
+        var name = document.form1.name.value ;
+        var regNo = document.form1.reg.value ;
+        var email = document.form1.email.value ;
+        var cnic = document.form1.cnic.value ;
+        var phone = document.form1.phone.value ;
+        var website = document.form1.website.value ;
+        var password = document.form1.password.value ;
+
+        const namePatt = /[A-Za-z]+/ ;
+        const regPatt = /SU-[0-9]+-[0-9]+-[0-9]+-[0-9]+/ ;
+        const emailPatt = /[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+/ ;
+        const cnicPatt = /\d\d\d\d\d-\d\d\d\d\d\d\d-\d/ ;
+        const phonePatt = /03\d\d-\d\d\d\d\d\d\d/ ;
+        const websitePatt = /www\.[A-Za-z]+\.[A-Za-z]+/ ;
+        const passwordPatt = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$/ ;
+
+        if (namePatt.test(name)) {}
+        else{alert("Name is mandatory !  and will only contain Letter")}
+
+        if (regPatt.test(regNo)) {}
+        else{alert("Reg No is mandatory!  Reg No will be like SU-20-01-002-031")}
+        
+        if (emailPatt.test(email)) {}
+        else{alert("Email is mandatory!  Email will be like abc@gmail.com")}
+
+        if (cnicPatt.test(cnic)) {}
+        else{alert("CNIC is mandatory!  CNIC will be like 22501-9508658-5")}
+
+        if (phonePatt.test(phone)) {}
+        else{alert("Phone No is mandatory!  Phone No will be like 0342-9067901")}
+
+        if (websitePatt.test(website)) {}
+        else{alert("Website is mandatory!  Website will be like www.google.com")}
+
+        if (passwordPatt.test(password)) {}
+        else{alert("Password is mandatory!  Password must br Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:")}
+      
+
+        if( (namePatt.test(name)) && (regPatt.test(regNo)) && (emailPatt.test(email)) && (cnicPatt.test(cnic)) && (phonePatt.test(phone)) && (websitePatt.test(website)) && (passwordPatt.test(password)) )
+        {
+            alert(" Congjulation !!!!!  You have Enter all the Data Correctly .")
+        }
+
+       
+      }
+    </script>
+  </head>
+  <body>
+    <form name="form1" class="container">
+      <h1> Pattren Validation </h1>
+
+        Name : <input type="text" name="name" > 
+        <br><br>
+
+        Reg # : <input type="text" name="reg" > 
+        <br><br>
+
+        Email : <input type="email" name="email">
+        <br><br>
+      
+        CNIC # : <input type="text"  name="cnic">
+        <br><br>
+
+        Phone # : <input type="text"  name="phone">
+        <br><br>
+
+        Website : <input type="text"  name="website">
+        <br><br>
+
+        Password : <input type="password"  name="password">
+        <br><br>
+
+        <input type="button" value="Validate" onclick="valid()">
+
+
+        
+
+
+    </form>
+  </body>
+</html>
